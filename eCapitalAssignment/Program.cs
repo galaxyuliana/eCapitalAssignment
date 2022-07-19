@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using eCapitalAssignment.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Add DBContect to the project.
+builder.Services.AddDbContext<eCapitalContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("eCapitalContext") ?? throw new InvalidOperationException("Connection string 'eCapitalContext' not found.")));
 
 var app = builder.Build();
 
