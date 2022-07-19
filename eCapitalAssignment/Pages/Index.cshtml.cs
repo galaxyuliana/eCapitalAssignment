@@ -12,5 +12,14 @@ namespace eCapitalAssignment.Pages
         {
             Employee = await GetEmployees();
         }
+        public async Task<RedirectResult> OnPostAsync(int id)
+        {
+            if (CheckEmployees(id))
+            {
+                await DeleteEmployeeAsync(id);
+            }
+
+            return Redirect("/");
+        }
     }
 }
