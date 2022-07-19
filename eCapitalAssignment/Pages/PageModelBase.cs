@@ -15,11 +15,6 @@ namespace eCapitalAssignment.Pages
             return await ECapitalContext.Employee.ToListAsync();
         }
 
-        protected int NumberOfEmployees()
-        {
-            return ECapitalContext.Employee.Count();
-        }
-
         protected bool CheckEmployees(int id)
         {
             return ECapitalContext.Employee.Any(e => e.Id == id);
