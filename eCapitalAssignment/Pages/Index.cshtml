@@ -1,5 +1,61 @@
 ﻿@page
 @model eCapitalAssignment.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "List of Employees";
 }
+
+<div class="row">
+    <div class="col-xl-8 mx-auto mb-3">
+        <a class="btn btn-primary" role="button" asp-page="Upsert">Add Employee</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-8 mx-auto mb-3">
+        <table class="table table-hover text-center">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Employee[0].Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Employee[0].FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Employee[0].LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Employee[0].Salary)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.Employee) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Salary)
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" role="button" asp-page="./Upsert" asp-route-id="@item.Id">Edit</a> |
+                        <a class="btn btn-outline-danger" role="button" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-8 mx-auto mb-3 text-end">
+        <a class="btn btn-primary" role="button" asp-page="Upsert">Add Employee</a>
+    </div>
+</div>
