@@ -4,10 +4,23 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="/css/site.min.css" rel="stylesheet" asp-append-version="true" />
 </head>
 <body>
-    <div>
+    <header class="container">
+        <p class="fs-1 fw-bold">Take-home Assignment (Full Stack)</p>
+        <p class="fs-4 fw-semibold">Yuliana Shin</p>
+    </header>
+    <div class="container">
         @RenderBody()
     </div>
+    <footer class="container-fluid bg-secondary text-white p-3 text-center">
+        <span class="fs-6">Take-home Assignment (Full Stack) by Yuliana Shin</span>
+    </footer>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
