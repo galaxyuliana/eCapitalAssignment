@@ -60,6 +60,14 @@ body {
 }
 
 /* Color Themes */
+a.home {
+  text-decoration: none;
+  color: #5d727e;
+}
+a.home:hover, a.home:active, a.home:focus, a.home:visited {
+  color: #5d727e;
+}
+
 header {
   color: #5d727e;
 }
