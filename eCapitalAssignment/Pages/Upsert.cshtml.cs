@@ -9,7 +9,7 @@ namespace eCapitalAssignment.Pages
         [BindProperty]
         public Employee Employee { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync([FromRoute]int? id)
         {
             if (id != null)
             {
@@ -26,7 +26,7 @@ namespace eCapitalAssignment.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync([FromRoute]int? id)
         {
             if (!ModelState.IsValid)
             {

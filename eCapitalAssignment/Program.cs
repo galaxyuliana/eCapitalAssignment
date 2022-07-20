@@ -7,7 +7,14 @@ using Microsoft.AspNetCore.Localization;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services
+    .AddRazorPages()
+    .AddRazorPagesOptions(options =>
+    {
+        options.Conventions
+            .AddPageRoute("/upsert", "/upsert/{id:int}")
+            .AddPageRoute("/index", "/index/{id:int}");
+    });
 
 // Add DBContect to the project.
 builder.Services.AddDbContext<eCapitalContext>(options =>

@@ -12,7 +12,7 @@ namespace eCapitalAssignment.Pages
         {
             Employee = await GetEmployees();
         }
-        public async Task<RedirectResult> OnPostAsync(int id)
+        public async Task<RedirectResult> OnPostAsync([FromRoute]int id)
         {
             if (CheckEmployees(id))
             {
