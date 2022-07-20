@@ -11,34 +11,34 @@
                     <h3 class="fw-bold">@(Model.Employee == null ? "Add New Employee" : "Update Exist Employee")</h3>
                 </div>
                 <div class="row mb-5">
-                    <div class="col-4 col-md-2">
+                    <div class="col-4 col-xl-2">
                         <label class="form-label" asp-for="@Model.Employee.FirstName">
                             @Html.DisplayNameFor(model => model.Employee.FirstName) <span class="required">*</span>
                         </label>
                     </div>
-                    <div class="col-8 col-md-10">
+                    <div class="col-8 col-xl-10">
                         <input type="text" class="form-control" asp-for="@Model.Employee.FirstName" placeholder="@Html.DisplayNameFor(model => model.Employee.FirstName)" required>
                         <span asp-validation-for="@Model.Employee.FirstName" class="invalid-feedback"></span>
                     </div>
                 </div>
                 <div class="row mb-5">
-                    <div class="col-4 col-md-2">
+                    <div class="col-4 col-xl-2">
                         <label class="form-label" asp-for="@Model.Employee.LastName">
                             @Html.DisplayNameFor(model => model.Employee.LastName) <span class="required">*</span>
                         </label>
                     </div>
-                    <div class="col-8 col-md-10">
+                    <div class="col-8 col-xl-10">
                         <input type="text" class="form-control" asp-for="@Model.Employee.LastName" placeholder="@Html.DisplayNameFor(model => model.Employee.LastName)">
                         <span asp-validation-for="@Model.Employee.LastName" class="invalid-feedback"></span>
                     </div>
                 </div>
                 <div class="row mb-5">
-                    <div class="col-4 col-md-2">
+                    <div class="col-4 col-xl-2">
                         <label class="form-label" asp-for="@Model.Employee.Salary">
                             @Html.DisplayNameFor(model => model.Employee.Salary) <span class="required">*</span>
                         </label>
                     </div>
-                    <div class="col-8 col-md-10">
+                    <div class="col-8 col-xl-10">
                         <div class="input-group">
                             <span class="input-group-text">$</span>
                             <input type="number" class="form-control" asp-for="@Model.Employee.Salary" placeholder="60,000">

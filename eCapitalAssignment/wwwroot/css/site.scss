@@ -1,0 +1,146 @@
+/* Font */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Form Validation */
+.required {
+    color: red;
+}
+
+.input-validation-error {
+    border: 1px solid red;
+}
+
+.field-validation-error {
+    display: block;
+    position: absolute;
+    width: 300px;
+
+    @media (max-width: 575px) {
+        width: 170px;
+    }
+}
+
+/* Table Layout */
+@media (max-width: 575px) {
+    .table {
+        font-size: 0.8rem;
+
+        & > :not(caption) > * > * {
+            padding: 0.25rem 0.25rem;
+        }
+
+        .seperator {
+            display: none;
+        }
+
+        th:nth-child(1) {
+            width: 8.33333333%;
+        }
+
+        th:nth-child(2), th:nth-child(3), th:nth-child(5) {
+            width: 25%;
+        }
+
+        th:nth-child(4) {
+            width: 16.66666667%;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .seperator {
+        display: none;
+    }
+
+    .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: .875rem;
+        border-radius: 0.2rem;
+    }
+}
+
+.table {
+    td {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Color Themes */
+header {
+    color: #5d727e;
+}
+
+.btn-primary {
+    background-color: #e8872d;
+    border-color: #e8872d;
+
+    &:hover {
+        color: #e8872d;
+        background-color: #ffffff;
+        border-color: #e8872d;
+    }
+}
+
+.btn-secondary {
+    background-color: #5d727e;
+    color: #ffffff;
+    border-color: #5d727e;
+
+    &:hover {
+        background-color: #ffffff;
+        color: #5d727e;
+        border-color: #5d727e;
+    }
+}
+
+.btn-warning {
+    background-color: #72beb6;
+    border-color: #72beb6;
+    color: #ffffff;
+
+    &:hover {
+        background-color: #ffffff;
+        color: #72beb6;
+        border-color: #72beb6;
+    }
+}
+
+.btn-outline-secondary {
+    border-color: #5d727e;
+    color: #5d727e;
+
+    &:hover {
+        background-color: #5d727e;
+        border-color: #5d727e;
+        color: #ffffff;
+    }
+}
+
+.btn-outline-danger {
+    color: #c03737;
+    border-color: #c03737;
+
+    &:hover {
+        background-color: #c03737;
+        border-color: #c03737;
+        color: #ffffff;
+    }
+}
+
+.bg-secondary {
+    background-color: #5d727e !important;
+}
+
+h3.fw-bold {
+    color: #e8872d;
+}
+
+.seperator {
+    color: #5d727e;
+}
+
+.table-hover > tbody > tr:hover {
+    --bs-table-accent-bg: rgba(232, 135, 45, 0.075)!important;
+}
