@@ -47,7 +47,7 @@
                     <td>
                         <a class="btn btn-warning" role="button" asp-page="upsert" asp-route-id="@item.Id">Edit</a>
                         <span class="seperator"> | </span>
-                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deletionModal" data-bs-id="@item.Id" data-bs-name="@String.Format("{0} {1}", item.FirstName, item.LastName)">
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalWindow" data-bs-id="@item.Id" data-bs-name="@String.Format("{0} {1}", item.FirstName, item.LastName)">
                           Delete
                         </button>
                     </td>
@@ -63,41 +63,26 @@
     </div>
 </div>
 
-
 <!-- Modal for deletion -->
-<div class="modal fade" id="deletionModal" tabindex="-1" aria-labelledby="deletionModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deletionModalLabel">Delete Employee</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <form method="post">
-            <button type="submit" class="btn btn-outline-danger btn-delete-employee">Delete</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+<partial name="_Modal" />
 
 @section Scripts{
     <script>
-        var deletionModal = document.getElementById('deletionModal');
-        deletionModal.addEventListener('show.bs.modal', function(event) {
+        var modalWindow = document.getElementById('modalWindow');
+        modalWindow.addEventListener('show.bs.modal', function(event) {
             // Button that triggered the modal
             var button = event.relatedTarget;
             // Extract info from data-bs-* attributes
             var employeeName = button.getAttribute('data-bs-name');
             var employeeId = button.getAttribute('data-bs-id');
             // Update the modal's content.
-            var modalBodyInput = deletionModal.querySelector('.modal-body');
-            var modalDeleteButton = deletionModal.querySelector('.btn-delete-employee');
+            var modalWindowLabel = modalWindow.querySelector('#modalWindowLabel');
+            var modalBodyInput = modalWindow.querySelector('.modal-body');
+            var modalDeleteButton = modalWindow.querySelector('.btn-modal-window');
 
+            modalWindowLabel.textContent = 'Delete Employee';
             modalBodyInput.textContent = 'Are you sure you want to delete the data of ' + employeeName + '?';
+            modalDeleteButton.textContent = 'Delete';
             modalDeleteButton.setAttribute('formaction', '/index/' + employeeId);
         });
     </script>
