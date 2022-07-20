@@ -12,8 +12,10 @@ builder.Services
     .AddRazorPagesOptions(options =>
     {
         options.Conventions
-            .AddPageRoute("/upsert", "/upsert/{id:int}")
-            .AddPageRoute("/index", "/index/{id:int}");
+            .AddPageRoute("/employees/upsert", "/upsert")
+            .AddPageRoute("/employees/upsert", "/upsert/{id:int}")
+            .AddPageRoute("/employees/index", "/index/{id:int}")
+            .AddPageRoute("/employees/index", "/");
     });
 
 // Add DBContect to the project.

@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using eCapitalAssignment.Models;
 
-namespace eCapitalAssignment.Pages
+namespace eCapitalAssignment.Pages.Employees
 {
     public class IndexModel : PageModelBase
     {

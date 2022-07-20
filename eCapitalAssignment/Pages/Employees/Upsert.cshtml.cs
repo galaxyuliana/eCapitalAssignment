@@ -2,14 +2,14 @@ using eCapitalAssignment.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace eCapitalAssignment.Pages
+namespace eCapitalAssignment.Pages.Employees
 {
     public class UpsertModel : PageModelBase
     {
         [BindProperty]
         public Employee Employee { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync([FromRoute]int? id)
+        public async Task<IActionResult> OnGetAsync([FromRoute] int? id)
         {
             if (id != null)
             {
@@ -26,7 +26,7 @@ namespace eCapitalAssignment.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync([FromRoute]int? id)
+        public async Task<IActionResult> OnPostAsync([FromRoute] int? id)
         {
             if (!ModelState.IsValid)
             {
