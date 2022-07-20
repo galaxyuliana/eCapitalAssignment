@@ -68,7 +68,7 @@ header {
   background-color: #e8872d;
   border-color: #e8872d;
 }
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
   color: #e8872d;
   background-color: #ffffff;
   border-color: #e8872d;
@@ -79,7 +79,7 @@ header {
   color: #ffffff;
   border-color: #5d727e;
 }
-.btn-secondary:hover {
+.btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus {
   background-color: #ffffff;
   color: #5d727e;
   border-color: #5d727e;
@@ -90,7 +90,7 @@ header {
   border-color: #72beb6;
   color: #ffffff;
 }
-.btn-warning:hover {
+.btn-warning:hover, .btn-warning:active, .btn-warning:focus {
   background-color: #ffffff;
   color: #72beb6;
   border-color: #72beb6;
@@ -100,7 +100,7 @@ header {
   border-color: #5d727e;
   color: #5d727e;
 }
-.btn-outline-secondary:hover {
+.btn-outline-secondary:hover, .btn-outline-secondary:active, .btn-outline-secondary:focus {
   background-color: #5d727e;
   border-color: #5d727e;
   color: #ffffff;
@@ -110,7 +110,7 @@ header {
   color: #c03737;
   border-color: #c03737;
 }
-.btn-outline-danger:hover {
+.btn-outline-danger:hover, .btn-outline-danger:active, .btn-outline-danger:focus {
   background-color: #c03737;
   border-color: #c03737;
   color: #ffffff;
