@@ -6,7 +6,21 @@
 
 <div class="row">
     <div class="col-xl-8 mx-auto mb-3">
-        <h3 class="fw-bold">EMPLOYEES</h3>
+        <div class="row">
+            <div class="col-lg-6">
+                <h3 class="fw-bold">EMPLOYEES</h3>
+            </div>
+            <div class="col-lg-6">
+                <form class="row g-2" method="get">
+                    <div class="col-sm-9 col-12">
+                        <input type="text" class="form-control" asp-for="@Model.SearchString" />
+                    </div>
+                    <div class="col-sm-3 col-12">
+                        <input type="submit" value="Search" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 <div class="row">

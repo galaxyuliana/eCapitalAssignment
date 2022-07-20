@@ -5,14 +5,19 @@ using eCapitalAssignment.Models;
 
 namespace eCapitalAssignment.Pages
 {
-    #nullable disable
+#nullable disable
     public class PageModelBase : PageModel
     {
         protected eCapitalContext ECapitalContext => HttpContext.RequestServices.GetRequiredService<eCapitalContext>();
 
-        protected async Task<List<Employee>> GetEmployees()
+        protected async Task<List<Employee>> GetEmployees(string searchString)
         {
-            return await ECapitalContext.Employee.ToListAsync();
+            return !string.IsNullOrEmpty(searchString) ?
+                    await ECapitalContext.Employee
+                        .Where(s => s.FirstName.Contains(searchString)
+                                || s.LastName.Contains(searchString))
+                        .ToListAsync()
+                    : await ECapitalContext.Employee.ToListAsync();
         }
 
         protected bool CheckEmployees(int id)
